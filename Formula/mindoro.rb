@@ -1,8 +1,8 @@
 class Mindoro < Formula
   desc "Pomodoro timer whose breaks take over every terminal window"
   homepage "https://github.com/stefanahman/mindoro"
-  url "https://github.com/stefanahman/mindoro/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "c071e4de5ad418b89e156de682e294a5123c860d6ae35bff3a4246f5d46ccd62"
+  url "https://github.com/stefanahman/mindoro/releases/download/v0.1.1/mindoro-0.1.1.tar.gz"
+  sha256 "cc2df38c15aadf01b37ca8ed58601c6ddc7fe3c25dbb0a823577e10e90fa3193"
   license "MIT"
 
   depends_on "bash"
