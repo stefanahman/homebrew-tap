@@ -33,9 +33,9 @@ cask "mcp-defer" do
 
   binary "mcp-defer"
 
-  postflight do
-    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/mcp-defer"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/mcp-defer"]
     end
   end
 
