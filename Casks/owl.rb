@@ -6,31 +6,31 @@ cask "owl" do
     end
   end
 
-  version "0.22.4"
+  version "0.22.5"
 
   on_macos do
     on_arm do
-      sha256 "33e1e0989e40ac4d79557e14a0c17fa0ae8c1ca94a1cf719ad08bcd5f9fe2d20"
+      sha256 "ad14707fcac9546d3cb22af09b7cb9e596944c5ce4e50234470d397b36cf323d"
       url "https://github.com/stefanahman/owl/releases/download/v#{version}/owl_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "502bd20b1ad791ae6756621283edc1b0524a301eef73756d4b98345522f3ea7f"
+      sha256 "d94f8f5145590c4338698f0bfc77fe41cbcdfaedad14adec514b64374e396779"
       url "https://github.com/stefanahman/owl/releases/download/v#{version}/owl_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "34c028c9de61625b4bb847e5e70b0f74c76a68f0ee4eec1f4548b02acbbb6765"
+      sha256 "3e4e8b87dbe16a6a7acbee301d0d4203c9cf01c84fc2e017cfb114dcecac677c"
       url "https://github.com/stefanahman/owl/releases/download/v#{version}/owl_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "94a1a1105e81c67d4f0106082e64183c315d10ebebfdec06ed068d11290bba89"
+      sha256 "8be31871efc508dc7a2e6fa0456c19899837d7f02e91bc6dfb831ad8f6e63313"
       url "https://github.com/stefanahman/owl/releases/download/v#{version}/owl_#{version}_linux_amd64.tar.gz"
     end
   end
 
   name "owl"
-  desc "TUI of the PRs waiting for your review; one key opens each as a git worktree and a window in tmux, herdr or cmux with Claude Code reviewing inside"
+  desc "TUI that opens any PR, issue or project as a git worktree with Claude Code"
   homepage "https://github.com/stefanahman/owl"
 
   livecheck do
