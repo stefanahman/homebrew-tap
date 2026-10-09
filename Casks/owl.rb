@@ -6,25 +6,25 @@ cask "owl" do
     end
   end
 
-  version "0.23.0"
+  version "0.23.1"
 
   on_macos do
     on_arm do
-      sha256 "fcd5a864d15e439b93a7ce581c81cbdbf875583f777ae6d2bcedce70fef59a55"
+      sha256 "1137390ddc72aec1a7024a3d7b0c596f49e5212d91edcf15eb0b76a6f04e9191"
       url "https://github.com/stefanahman/owl/releases/download/v#{version}/owl_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "c5672b592af6f9de38370cdc670953590b637f4d64e0f1a22f53badad13a641c"
+      sha256 "ef3168c41e07e2a910a8880c0927dffff3adfc11c98e43a4578720aa5fb9f18e"
       url "https://github.com/stefanahman/owl/releases/download/v#{version}/owl_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "6d0bd5dcd8c3a45e50269eb29e29914d49f7f4e55f16fdbe2f556cae4dc5c173"
+      sha256 "272eb98f5dcad20420e48dfd51b3c1fbae1bcd26f4ceb21f29dd1e7990eee0fc"
       url "https://github.com/stefanahman/owl/releases/download/v#{version}/owl_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "cd4efef3a88fdbe7d48ae6ef4d680dac030d2a50bb8265982a053f345d64dfd8"
+      sha256 "52c52e9cdd428f6571f7cd63df3a317df37b14f354061b72cc4def783aa72107"
       url "https://github.com/stefanahman/owl/releases/download/v#{version}/owl_#{version}_linux_amd64.tar.gz"
     end
   end
