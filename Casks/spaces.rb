@@ -6,21 +6,21 @@ cask "spaces" do
     end
   end
 
-  version "0.11.2"
+  version "0.11.3"
 
   on_macos do
     on_arm do
-      sha256 "8bceae194ac36e74ff253403a992acdede3cd5a3c4d7ff024b49be2e4d92cb10"
+      sha256 "a09c0ef83e1be74f74b16e4a42c260733e1dbb0d6927159a5dc227f497d5ee82"
       url "https://github.com/stefanahman/spaces/releases/download/v#{version}/spaces_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "7899e3cffc7f929a4c276377ec607be5079e32a62621bdc5df4321205f2ba6bb"
+      sha256 "96de085f74dde4493bc602a46bba0f1a4bff13933821875f9db23921fea95899"
       url "https://github.com/stefanahman/spaces/releases/download/v#{version}/spaces_#{version}_darwin_amd64.tar.gz"
     end
   end
 
   name "spaces"
-  desc "One config for your windows on desktop spaces: tmux sessions, programs, applications"
+  desc "Hotkeys for tmux, herdr and cmux workspaces, pinned to desktop spaces"
   homepage "https://github.com/stefanahman/spaces"
 
   livecheck do
