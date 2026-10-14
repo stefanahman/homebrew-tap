@@ -6,15 +6,15 @@ cask "spaces" do
     end
   end
 
-  version "0.11.3"
+  version "0.11.4"
 
   on_macos do
     on_arm do
-      sha256 "a09c0ef83e1be74f74b16e4a42c260733e1dbb0d6927159a5dc227f497d5ee82"
+      sha256 "2f90df193851febeccd68bf0f6fecd2c5998436a907694da91706070c23f3254"
       url "https://github.com/stefanahman/spaces/releases/download/v#{version}/spaces_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "96de085f74dde4493bc602a46bba0f1a4bff13933821875f9db23921fea95899"
+      sha256 "ea45dd1bb51d647f8446f5bbf673db280d2cf1a78b2638b09993ed414977031c"
       url "https://github.com/stefanahman/spaces/releases/download/v#{version}/spaces_#{version}_darwin_amd64.tar.gz"
     end
   end
