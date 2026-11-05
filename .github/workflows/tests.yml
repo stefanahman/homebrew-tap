@@ -1,0 +1,52 @@
+name: tap
+
+# The checks `brew test-bot --only-tap-syntax` runs (Homebrew's tap
+# template, from brew tap-new), less `brew style` on the casks:
+# goreleaser writes them on every release and its template trips style
+# rules (goreleaser#6752 measured them, #6678 closed as not planned).
+# readall is the check `brew tap` runs on the casks a user asks for, and
+# it refuses the whole tap when one fails.
+# goreleaser pushes each release's update straight to main, so main runs
+# too. No bottles: the casks ship prebuilt binaries.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A newer push to a pull request makes the older run pointless. Other runs
+# get a group of their own, so each push to main keeps its result.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.ref || github.run_id }}
+  cancel-in-progress: true
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash -xeuo pipefail {0}
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/homebrew/brew:main
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      # Checks out the commit under test as the stefanahman/tap tap.
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@d482da0e602890d3160aade42e72c8556103bf04 # 2026.10.26.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Every cask and formula loads on every OS and architecture.
+      - run: brew readall --aliases --os=all --arch=all stefanahman/tap
+
+      - run: brew audit --except=installed --tap=stefanahman/tap
+
+      # The formulae are written by hand, so they keep Homebrew's style.
+      - run: brew style "$TAP/Formula"
+        env:
+          TAP: ${{ steps.set-up-homebrew.outputs.repository-path }}
